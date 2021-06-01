@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color:aliceblue
+}
+
+h2{
+    padding: 20px;
+}
+
+i{
+    padding: 30px;
+}
+
+h2:hover,.fab:hover{
+    text-shadow: 1px 1px 2px black, 0 0 25px #8860d0, 0 0 5px #6b37ca !important;
+    cursor: pointer;
+}
+
+h4{
+    background-color: rgb(20, 17, 17);
+}

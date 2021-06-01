@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.m{
+    width: 100%;
+}
+
+.contain{
+    width: 100%;
+}
+.colu{
+    width: 600px;
+    margin: auto;
+}
+
+@media screen and (max-width: 630px){
+.mform{
+    width: 100px;
+}
+.colu{
+    width: 100px;
+}
+}

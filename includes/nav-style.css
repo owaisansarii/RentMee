@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+html,body{
+    line-height: 1.5p;
+    box-sizing: border-box;
+    margin: 0;
+    /* overflow-x: hidden; */
+    top:0;
+    left:0;
+}
+
+header{
+    font-family: "poppins";
+    font-size: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: #c1c8e4 !important;
+    font-weight: 800;
+}
+
+.nav-item{
+    padding: 10px;
+}
+
+li:hover{
+    background-color: #8860d0 !important;
+    border-radius: 15px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.navbar{
+    background-color: black !important;
+    height: 0;
+    min-height: 12vh;
+}
+
+.navbar .navbar-brand a{
+    padding: 1rem 0;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px black, 0 0 25px #8860d0, 0 0 5px #6b37ca !important;
+}
+
+.navbar-brand:hover{
+    text-shadow: 0 0 5px rgb(77, 77, 161),0 0 25px rgb(77, 77, 209), 1px 1px 2px rgb(167, 158, 158) !important;
+}
+
+.navbar-toggler{
+    background: black;
+    border: none;
+    padding: 10px 6px;
+    outline: none;
+}
+
+.navbar-toggler span{
+    display: block;
+    width: 22px;
+    height: 2px;
+    border: 1px;
+    background: #8860d0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-toggler span+span{
+    margin-top: 4px;
+    width: 22px;
+    
+}
+.navbar-toggler span+span+span{
+    width: 22px;
+    
+}
+
+/* .navbar-expand-lg .navbar-nav .nav-link{
+    padding: 2rem;
+    font-size: 1.4rem;
+    position: relative;
+} */
+
+.navbar-expand-lg .navbar-nav .nav-link:hover{
+    border-top:4px solid transparent;
+}
+
+.dropdown-menu{
+    background-color: black !important;
+    border-radius: 30px;
+}
+.dropdown-menu a:hover{
+    background-color: #8860d0;
+    border-radius: 20px;
+}
+
+.navbar-collapse{
+    background-color:black ;
+    border-radius: 20px;
+  
+}
+
+.btn{
+    margin: 5px;
+    border: 2px solid #8860d0;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    width: 7rem;
+}
+
+.btn:hover{
+    color: white;
+    box-shadow: 0 0 8px 0 rgba(162, 0, 255, 0.911), 0 0 20px 0 rgba(202, 138, 255, 0.986);
+}

@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+h2{
+    text-align: center;
+    border-bottom:2px solid #8860d0;
+}
+
+.mform{
+   width:600px;
+}
+
+.main{
+    padding: 10px;
+}
+
+.input-field{
+   
+    padding: 10px;
+}
+
+.bhk{
+    display:flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 10px;
+}
+
+.bhk h{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20%;
+}
+
+.butn{
+    margin: 5px;
+    border: 2px solid grey;
+    padding: 5px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    color: rgb(34, 34, 34);
+    width: 95%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.h{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+input{
+    width: 100%;
+    border-radius: 20px;
+    background:none;
+    outline: none;
+    border: none;
+    line-height: 2;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.input-field{
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    height: 53px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 32% 70%;
+  }
+
+.input-field-rent{
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 5px;
+    height: 106px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.input-field-b{
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+    height: 115px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+.input-field-s{
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+    height: 106px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+.balcony{
+    width: 50%;
+  
+}.parking{
+    width: 50%;
+    
+}
+
+.radi{
+    padding: 5px;
+   display: flex;
+   flex-direction: row;
+}
+
+ input[type="file"] {
+    margin: 5px;
+    border: 2px solid grey;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 20px;
+    color: rgb(34, 34, 34);
+    width: 95%;
+    background: transparent;
+    cursor: pointer;
+}
+.custom-file-upload {
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    width: 98%;
+    font-weight: 700;
+    color: rgba(51, 51, 51, 0.63);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover{
+    box-shadow: 1px 1px 2px black, 0 0 25px #8860d0, 0 0 5px #6b37ca !important;
+}
+
+.submit-butn{
+    margin: 5px;
+    border: 2px solid grey;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 20px;
+    color: rgb(34, 34, 34);
+    width: 95%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.preview{
+    padding: 3px;
+}
