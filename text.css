@@ -2,19 +2,24 @@
     width:400px;
     margin:auto;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#featured{
+    cursor: pointer;
+    border: 2px solid black;
 }
 
 
 
-#featured{
-    max-width: 500px;
-    max-height: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right:auto;
-    cursor: pointer;
-    border: 2px solid black;
+.feature{
+    height: 228px;
 }
 
 .thumbnail{

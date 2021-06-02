@@ -181,6 +181,32 @@ i{
   padding: 20px;
 }
 
+.fr{
+  margin:5px;
+  padding:1px 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgb(255, 255, 255);
+}
+.rr{
+  margin:5px;
+  padding:1px 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgb(255, 255, 255);
+}
+.br{
+  margin:5px;
+  padding:1px 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgb(255, 255, 255);
+}
+
+.br,.fr,.rr:hover{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 400px) {
     .search-line{
         grid-template-columns: 40% 70%;

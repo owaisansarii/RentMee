@@ -22,19 +22,48 @@
     /* top:0; */
 }
 
+.heading{
+    text-align: center;
+    border-bottom: 2px solid grey;
+    overflow: hidden;
+    height: 80px;
+    font-size: 15px;
+}
+
+.more{
+    height: 25px;
+    overflow: hidden;
+    color:rgb(92, 92, 92);
+    font-weight: 500;
+}
+
 .posts{
     width:600px;
     min-width: 50px;
     border-radius: 10px;
-    display: grid;
-    grid-template-columns: 200px auto;
+    display: flex;
+    flex-direction: column;
     background-color: #c0c0c0;
-    height: 150px;
-    margin-top: 10px;
+    height: 250px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     transition: transform .2s; 
+}
+
+.all{
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.p{
+    display: flex;
+    flex-direction: column;
+}
+
+.thumb{
+    margin: auto;
 }
 
 #im{
@@ -42,12 +71,21 @@
     max-height: 100%;
     display: block; 
     padding: 10px;
+    margin: auto;
+    border: 2px solid rgb(151, 123, 179);
+    border-radius: 10px;
+}
+
+.he{
+    display: flex;
+    flex-direction: column;
 }
 
 .det{
     display: grid;
     grid-template-columns: 50% auto;
 }
+
 
 .s{
     display: block;
@@ -56,36 +94,35 @@
 
 .posts:hover{
     box-shadow: 0 0 20px black;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+/* .modal { */
+    /* display: none; Hidden by default */
+    /* position: fixed; Stay in place */
+    /* z-index: 1; Sit on top */
+    /* padding-top: 100px; Location of the box */
+    /* left: 0;
+    top: 0; */
+     /* Full height */
+    /* overflow: auto; Enable scroll if needed */
+    /* background-color: rgb(0,0,0); Fallback color */
+    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
+  /* } */
   
   /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
+  /* .modal-content {
+    background-color: #5c1b1b;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-  }
+    width: 50px;
+  } */
   
   /* The Close Button */
-  .close {
+  /* .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -97,4 +134,4 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+  } */

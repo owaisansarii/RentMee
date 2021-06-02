@@ -29,6 +29,11 @@ li:hover{
     border-radius: 15px;
 }
 
+.active{
+    background-color: #8860d0 !important;
+    border-radius: 15px;
+}
+
 ul{
     list-style-type: none;
 }

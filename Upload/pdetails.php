@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['Submit'])) {
     $host = "localhost";
     $user = "postgres";
@@ -7,7 +6,7 @@ if (isset($_POST['Submit'])) {
     $db = "rentmgmtsys";
     $conn = pg_connect("host=$host dbname=$db user=$user password=$pass")
         or die("could not connect to the server!");
-    $targetDir = "Upload/images/".$_SESSION['uid'];
+    $targetDir = "Upload/images/".$_SESSION['uid']."/";
     $allowTypes = array('jpg', 'png', 'jpeg');
     $fileNames = array_filter($_FILES['files']['name']);
     $statusMsg = $errorMsg = $errorUpload = $errorUploadType = '';
@@ -56,14 +55,16 @@ if (isset($_POST['Submit'])) {
                          VALUES ('".$_SESSION["uid"]."','$bhk','$floor','$locality','$address','$city','$rent','$deposit','$more','$balcony','$parking','$negotiable','$insertValuesSQL')";
                     $result = pg_query($conn, $query);
                     if ($result) {
-                        $statusMsg = "Files are uploaded successfully.";
-                        echo $statusMsg;
+                       header("location:ownerposts.php");
                     } else {
                         $statusMsg = "Sorry, there was an error uploading your file." . $errorUpload;
                     }
                 }
             } else {
                 $statusMsg = 'Please select a file to upload.';
+            }
+            if(!empty('$statusMsg')){
+                echo "<script>alert('$statusMsg');</script>";
             }
         }
         if ($selected === 'rowhouse') {
@@ -110,8 +111,7 @@ if (isset($_POST['Submit'])) {
                          VALUES ('".$_SESSION["uid"]."','$nor','$nob','$nof','$area','$locality','$address','$city','$rent','$deposit','$more','$balcony','$parking','$negotiable','$insertValuesSQL')";
                     $result = pg_query($conn, $query);
                     if ($result) {
-                        $statusMsg = "Files are uploaded successfully.";
-                        echo $statusMsg;
+                        header("location:ownerposts.php");
                     } else {
                         $statusMsg = "Sorry, there was an error uploading your file." . $errorUpload;
                     }

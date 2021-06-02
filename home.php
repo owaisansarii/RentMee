@@ -3,6 +3,7 @@ session_start(); /* Starts the session */
 if ($_SESSION['Active'] == false) { /* Redirects user to login.php if not logged in */
   header("location:login.php");
   exit;
+  $choosen="f";
 }
 ?>
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ if ($_SESSION['Active'] == false) { /* Redirects user to login.php if not logged
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="bootstrap/cs/bootstrap.css">
+    <!-- <link rel="stylesheet" href="bootstrap/cs/bootstrap.css"> -->
     <link rel="stylesheet" href="home.css">
 </head>
 
@@ -48,12 +49,18 @@ if ($_SESSION['Active'] == false) { /* Redirects user to login.php if not logged
                 <option value="6">20000-30000</option>
                 <option value="7">30000-50000</option>
             </select>
+            <div style="padding: 15px;">
+                Flat<span id="f"class="fr"></span>
+                Rowhouse<span id="r" class="rr"></span>
+                Bungalow<span id="b" class="br"></span>
+                <input type="hidden" name="rad" value="<?php echo $choosen; ?>">
+            </div>
         <input type="button" class="butn" value="Search">
         </form>
 
     </div>
     <div class="owner">
-        <p style="color:#8860d0; font-size:medium"> For Property Owner Post free ad </p>
+        <p style="color:#8860d0; font-size:medium"> For Property Owner<br> Post free ad </p>
         <div class="for-sale">
             <div class="faded">
                 <p class="a">Fast and verified Tenant/Buyers</p>
@@ -78,7 +85,7 @@ if ($_SESSION['Active'] == false) { /* Redirects user to login.php if not logged
             </div>
             <div class="image">
                 <img src="img/log1.svg" alt="" class="g">
-                <i>Post your ad free</i>
+                <i>Post your ad for free</i>
             </div>
         </div>
         <div class="lower">
@@ -95,6 +102,30 @@ if ($_SESSION['Active'] == false) { /* Redirects user to login.php if not logged
     <div class="footer">
         <?php include("footer.php"); ?>
     </div>
+    <script>
+         document.getElementById("f").style.backgroundColor="#8860d0";
+        $("#f").click(function(){
+            document.getElementById("f").style.backgroundColor="#8860d0";
+            document.getElementById("r").style.backgroundColor="";
+            document.getElementById("b").style.backgroundColor="";
+            <?php $choosen="f"?>
+            console.log("<?php echo $choosen; ?>")
+        })
+        $("#r").click(function(){
+            document.getElementById("f").style.backgroundColor="";
+            document.getElementById("r").style.backgroundColor="#8860d0";
+            document.getElementById("b").style.backgroundColor="";
+            <?php $choosen="r"?>
+            console.log("<?php echo $choosen; ?>")
+        })
+        $("#b").click(function(){
+            document.getElementById("f").style.backgroundColor="";
+            document.getElementById("r").style.backgroundColor="";
+            document.getElementById("b").style.backgroundColor="#8860d0";
+            <?php $choosen="b"?>
+            console.log("<?php echo $choosen; ?>")
+        })
+    </script>
 </body>
 
 </html>
