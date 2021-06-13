@@ -44,7 +44,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="property.php">Properties</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">More</a>
@@ -59,7 +59,6 @@
   </header>
   <script>
     $("document").ready(function() {
-      console.log("ready!");
       $.each($('.navbar-nav').find('li'), function() {
         $(this).toggleClass('active',
           window.location.pathname.indexOf($(this).find('a').attr('href')) > -1);

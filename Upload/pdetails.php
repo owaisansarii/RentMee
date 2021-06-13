@@ -6,7 +6,6 @@ if (isset($_POST['Submit'])) {
     $db = "rentmgmtsys";
     $conn = pg_connect("host=$host dbname=$db user=$user password=$pass")
         or die("could not connect to the server!");
-    $targetDir = "Upload/images/".$_SESSION['uid']."/";
     $allowTypes = array('jpg', 'png', 'jpeg');
     $fileNames = array_filter($_FILES['files']['name']);
     $statusMsg = $errorMsg = $errorUpload = $errorUploadType = '';
@@ -14,6 +13,11 @@ if (isset($_POST['Submit'])) {
     if (!empty($_POST['type'])) {
         $selected = $_POST['type'];
         if ($selected === 'flat') {
+            if ( !is_dir( "Upload/images/".$_SESSION['uid']."/flat" ) ) {       
+                if(!mkdir("Upload/images/".$_SESSION['uid']."/flat"))
+                    echo "<script>alert('Something went Wrong')</script>";
+            }
+            $targetDir = "Upload/images/".$_SESSION['uid']."/flat"."/";
             $bhk = $_POST['bhk'];
             $floor = $_POST['floor'];
             $locality = $_POST['locality'];
@@ -30,7 +34,6 @@ if (isset($_POST['Submit'])) {
                     // File upload path 
                     $fileName = rand(10, 10000).basename($_FILES['files']['name'][$key]) ;
                     $targetFilePath = $targetDir . $fileName;
-                    echo $targetFilePath."<br>";
                     // Check whether file type is valid 
                     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
                     if (in_array($fileType, $allowTypes)) {
@@ -68,6 +71,11 @@ if (isset($_POST['Submit'])) {
             }
         }
         if ($selected === 'rowhouse') {
+            if ( !is_dir( "Upload/images/".$_SESSION['uid']."/rowhouse" ) ) {       
+                if(!mkdir("Upload/images/".$_SESSION['uid']."/rowhouse"))
+                    echo "<script>alert('Something went Wrong')</script>";
+            }
+            $targetDir = "Upload/images/".$_SESSION['uid']."/rowhouse"."/";
             $nor = $_POST['no_of_room'];
             $nob = $_POST['no_of_bathroom'];
             $nof = $_POST['no_of_floor'];
@@ -86,7 +94,6 @@ if (isset($_POST['Submit'])) {
                     // File upload path 
                     $fileName = rand(10, 10000).basename($_FILES['files']['name'][$key]) ;
                     $targetFilePath = $targetDir . $fileName;
-                    echo $targetFilePath."<br>";
                     // Check whether file type is valid 
                     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
                     if (in_array($fileType, $allowTypes)) {
@@ -122,6 +129,11 @@ if (isset($_POST['Submit'])) {
             
         }
         if ($selected === 'bungalow') {
+            if ( !is_dir( "Upload/images/".$_SESSION['uid']."/bungalow" ) ) {       
+                if(!mkdir("Upload/images/".$_SESSION['uid']."/bungalow"))
+                    echo "<script>alert('Something went Wrong')</script>";
+            }
+            $targetDir = "Upload/images/".$_SESSION['uid']."/bungalow"."/";
             $nor = $_POST['no_of_room'];
             $nob = $_POST['no_of_bathroom'];
             $nof = $_POST['no_of_floor'];   
@@ -138,7 +150,6 @@ if (isset($_POST['Submit'])) {
                     // File upload path 
                     $fileName = rand(10, 10000).basename($_FILES['files']['name'][$key]) ;
                     $targetFilePath = $targetDir . $fileName;
-                    echo $targetFilePath."<br>";
                     // Check whether file type is valid 
                     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
                     if (in_array($fileType, $allowTypes)) {
@@ -159,19 +170,16 @@ if (isset($_POST['Submit'])) {
                 echo $insertValuesSQL;
                 if (!empty($insertValuesSQL)) {
                     // Insert image file name into database
-                    $query = "INSERT into bungalow (oid,no_of_room,no_of_bathroom,no_of_floor,area,locality,address,city,rent,deposit,more,balcony,parking,negotiable,images)
+                    $query = "INSERT into bungalow (oid,no_of_room,no_of_bathroom,no_of_floor,area,locality,address,city,rent,deposit,more,negotiable,images)
                          VALUES ('".$_SESSION["uid"]."','$nor','$nob','$nof','$area','$locality','$address','$city','$rent','$deposit','$more','$negotiable','$insertValuesSQL')";
                     $result = pg_query($conn, $query);
                     if ($result) {
-                        $statusMsg = "Files are uploaded successfully.";
-                        echo $statusMsg;
+                        header("location:ownerposts.php");
                     } else {
                         $statusMsg = "Sorry, there was an error uploading your file." . $errorUpload;
                     }
                 }
-            } else {
-                $statusMsg = 'Please select a file to upload.';
-            }
+            } 
         }
     }
     pg_close($conn);

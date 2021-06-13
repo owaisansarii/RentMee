@@ -29,9 +29,11 @@ if ($_SESSION['Active'] == false) { /* Redirects user to login.php if not logged
         $query = "INSERT INTO owner values('$id','$uid','$name','$city','$phno')";
         $rs = pg_query($conn, $query);
         if ($rs) {
-            mkdir("Upload/img/$id");
-            echo "<script>alert(Registration Successfull)</script>";
-            header("location:post.php");
+            if(!mkdir("Upload/images/$id"))
+                echo "<script>alert('Something went Wrong')</script>";
+            else{
+                header("location:post.php");
+            }
         } else {
             $msg = "Something Went Wrong";
         }
